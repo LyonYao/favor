@@ -46,7 +46,21 @@
         -webkit-align-items: center;
         align-items: center;
     }
-    
+    @keyframes fadeInRight{ 
+		0% {
+		    opacity: 0;
+		    filter: alpha(opacity=0);
+		    -webkit-transform: translate3d(-100%,0,0);
+		    transform: translate3d(-100%,0,0);
+		}
+	
+		100% {
+		    opacity: 1;
+		    filter: alpha(opacity=100);
+		    -webkit-transform: none;
+		    transform: none;
+		}
+	 }
     .left-o{
     	width: 15.156249999999998%;
 		height: 81.94444444444444%;
@@ -62,21 +76,8 @@
 		animation: fadeInRight 1s 0.5s 1 both;
 		display: block;
     }
-	@keyframes fadeInRight{ 
-	0% {
-	    opacity: 0;
-	    filter: alpha(opacity=0);
-	    -webkit-transform: translate3d(-100%,0,0);
-	    transform: translate3d(-100%,0,0);
-	}
-
-	100% {
-	    opacity: 1;
-	    filter: alpha(opacity=100);
-	    -webkit-transform: none;
-	    transform: none;
-	}
-   }
+	
+  
     </style>
 </head>
 <body>
