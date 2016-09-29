@@ -92,7 +92,28 @@
 		display: block;
     }
 	
-  
+  	div.first-main-img-div{
+  		    width: 100%;
+		    height: 82.14285714285714%;
+		    left: 0%;
+		    top: 0%;
+		    z-index: 0;
+		    -webkit-animation: zoomIn 2s 1s 1 both;
+		    -moz-animation: zoomIn 2s 1s 1 both;
+		    animation: zoomIn 2s 1s 1 both;
+		    position: absolute;
+  	}
+  	div.first-main-img-cover-div{
+  		 width: 100%;
+		    height: 82.14285714285714%;
+		     left: 0%;
+		    top: 0%;
+		    z-index: 0;
+		    position: absolute;
+  	}
+  	img{
+  		height: 100%;width: 100%;
+  	}
     </style>
 </head>
 <body>
@@ -100,6 +121,12 @@
     <div class="swiper-container">
         <div class="swiper-wrapper">
             <div class="swiper-slide" id="page-0">
+            	<div class="first-main-img-div">
+            		<img alt="" src="/images/fist-page-img.jpg">
+            	</div>
+            	<div class="first-main-img-cover-div">
+            		<img src="/images/first-page-back.png"/>
+            	</div>
             	<div class="left-o" >
             	<img src="/images/face-left-side.png" style="width: 100%;height: 100%;"/></div>
             </div>
@@ -138,7 +165,7 @@
         spaceBetween: 30,
         mousewheelControl: true,
         loop:true,
-        autoplay: 3000,
+        autoplay: 20000,
         onSlideNextEnd: function(swiper){
         	var index=swiper.activeIndex;
         	//$('#page-'+index).append($('#face-left'));
