@@ -46,46 +46,86 @@
         -webkit-align-items: center;
         align-items: center;
     }
+    
+    .left-o{
+    	width: 15.156249999999998%;
+		height: 81.94444444444444%;
+		left: -6.875000000000001%;
+		top: 8.333333333333332%;
+		z-index: 0;
+		position: absolute;
+    }
+    .swiper-slide-active .left-o{
+    	-webkit-animation: fadeInRight 1s 0.5s 1 both;
+		-moz-animation: fadeInRight 1s 0.5s 1 both;
+		animation: fadeInRight 1s 0.5s 1 both;
+		
+    }
+	@keyframes fadeInRight{ 
+	0% {
+	    opacity: 0;
+	    filter: alpha(opacity=0);
+	    -webkit-transform: translate3d(-100%,0,0);
+	    transform: translate3d(-100%,0,0);
+	}
+
+	100% {
+	    opacity: 1;
+	    filter: alpha(opacity=100);
+	    -webkit-transform: none;
+	    transform: none;
+	}
+   }
     </style>
 </head>
 <body>
     <!-- Swiper -->
     <div class="swiper-container">
         <div class="swiper-wrapper">
-            <div class="swiper-slide">Slide 1</div>
-            <div class="swiper-slide">Slide 2</div>
-            <div class="swiper-slide">Slide 3</div>
-            <div class="swiper-slide">Slide 4</div>
-            <div class="swiper-slide">Slide 5</div>
-            <div class="swiper-slide">Slide 6</div>
-            <div class="swiper-slide">Slide 7</div>
-            <div class="swiper-slide">Slide 8</div>
-            <div class="swiper-slide">Slide 9</div>
-            <div class="swiper-slide">Slide 10</div>
+            <div class="swiper-slide" id="page-0">
+            	<div class="left-o" id="face-left">
+            	<img src="/images/face-left-side.png" style="width: 100%;height: 100%;"/></div>
+            </div>
+            <div class="swiper-slide" id="page-1"><div class="left-o" id="face-left">
+            	<img src="/images/face-left-side.png" style="width: 100%;height: 100%;"/></div>2</div>
+            <div class="swiper-slide" id="page-2"><div class="left-o" id="face-left">
+            	<img src="/images/face-left-side.png" style="width: 100%;height: 100%;"/></div> 3</div>
+            <div class="swiper-slide" id="page-3"><div class="left-o" id="face-left">
+            	<img src="/images/face-left-side.png" style="width: 100%;height: 100%;"/></div> 4</div>
+            <div class="swiper-slide" id="page-4"><div class="left-o" id="face-left">
+            	<img src="/images/face-left-side.png" style="width: 100%;height: 100%;"/></div> 5</div>
+            <div class="swiper-slide" id="page-5"><div class="left-o" id="face-left">
+            	<img src="/images/face-left-side.png" style="width: 100%;height: 100%;"/></div> 6</div>
+            <div class="swiper-slide" id="page-6"><div class="left-o" id="face-left">
+            	<img src="/images/face-left-side.png" style="width: 100%;height: 100%;"/></div> 7</div>
+            <div class="swiper-slide" id="page-7"><div class="left-o" id="face-left">
+            	<img src="/images/face-left-side.png" style="width: 100%;height: 100%;"/></div> 8</div>
+            <div class="swiper-slide" id="page-8"><div class="left-o" id="face-left">
+            	<img src="/images/face-left-side.png" style="width: 100%;height: 100%;"/></div> 9</div>
+            <div class="swiper-slide" id="page-9"><div class="left-o" id="face-left">
+            	<img src="/images/face-left-side.png" style="width: 100%;height: 100%;"/></div> 10</div>
         </div>
         <!-- Add Pagination -->
         <div class="swiper-pagination"></div>
     </div>
 
     <!-- Swiper JS -->
+    <script src="/libs/jquery/jquery-1.11.2.min.js"></script>
     <script src="/libs/swaper/js/swiper.min.js"></script>
 
     <!-- Initialize Swiper -->
     <script>
     var swiper = new Swiper('.swiper-container', {
-    	effect: 'cube',
         direction: 'vertical',
-        slidesPerView:1,
-        cube: {
-            shadow: true,
-            slideShadows: true,
-            shadowOffset: 20,
-            shadowScale: 0.94
-        },
+        slidesPerView: 1,
         spaceBetween: 30,
         mousewheelControl: true,
         loop:true,
-        autoplay: 3000
+        autoplay: 3000,
+        onSlideNextEnd: function(swiper){
+        	var index=swiper.activeIndex;
+        	//$('#page-'+index).append($('#face-left'));
+        }
     });
     </script>
 </body>
