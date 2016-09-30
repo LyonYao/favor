@@ -7,17 +7,18 @@
 
     <!-- Link Swiper's CSS -->
     <link rel="stylesheet" href="/libs/swaper/css/swiper.min.css">
-
+	<link rel="stylesheet" href="/stylesheets/animations.css">
     <!-- Demo styles -->
     <style>
     html, body {
         position: relative;
         height: 100%;
+        font-size: 14px;
     }
     body {
         background: #eee;
         font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-        font-size: 14px;
+        font-size: 1rem;
         color:#000;
         margin: 0;
         padding: 0;
@@ -30,7 +31,7 @@
     }
     .swiper-slide {
         text-align: center;
-        font-size: 18px;
+        font-size: 1.3rem;
         background: #fff;
         /* Center slide text vertically */
         display: -webkit-box;
@@ -46,36 +47,7 @@
         -webkit-align-items: center;
         align-items: center;
     }
-    @keyframes fadeInRight{ 
-		0% {
-		    opacity: 0;
-		    filter: alpha(opacity=0);
-		    -webkit-transform: translate3d(-100%,0,0);
-		    transform: translate3d(-100%,0,0);
-		}
-	
-		100% {
-		    opacity: 1;
-		    filter: alpha(opacity=100);
-		    -webkit-transform: none;
-		    transform: none;
-		}
-	 }
-	 @-webkit-keyframes fadeInRight{ 
-		0% {
-		    opacity: 0;
-		    filter: alpha(opacity=0);
-		    -webkit-transform: translate3d(-100%,0,0);
-		    transform: translate3d(-100%,0,0);
-		}
-	
-		100% {
-		    opacity: 1;
-		    filter: alpha(opacity=100);
-		    -webkit-transform: none;
-		    transform: none;
-		}
-	 }
+    
     .left-o{
     	width: 15.156249999999998%;
 		height: 81.94444444444444%;
@@ -91,25 +63,39 @@
 		animation: fadeInRight 1s 0.5s 1 both;
 		display: block;
     }
-	
+	.swiper-slide-active .first-main-img-div-animation{
+			-webkit-animation: page-1-in 1s 1s 1 both;
+		    -moz-animation: page-1-in 1s 1s 1 both;
+		    animation: page-1-in 1s 1s 1 both;
+	}
   	div.first-main-img-div{
   		    width: 100%;
 		    height: 82.14285714285714%;
 		    left: 0%;
 		    top: 0%;
 		    z-index: 0;
-		    -webkit-animation: zoomIn 2s 1s 1 both;
-		    -moz-animation: zoomIn 2s 1s 1 both;
-		    animation: zoomIn 2s 1s 1 both;
+		    
 		    position: absolute;
   	}
   	div.first-main-img-cover-div{
-  		 width: 100%;
+  		 	width: 100%;
 		    height: 82.14285714285714%;
-		     left: 0%;
+		    left: 0%;
 		    top: 0%;
 		    z-index: 0;
 		    position: absolute;
+  	}
+  	.swiper-slide-active div.first-main-heart-div.animation{
+  			-webkit-animation: page-1-heart-route 3s 1s infinite both;
+		    -moz-animation: page-1--heart-route 3s 1s infinite both;
+		    animation: page-1--heart-route 3s 1s infinite both;
+  	}
+  	div.first-main-heart-div{
+  		width: 2.5rem;
+  		height: 2.5rem;
+  		position: absolute;
+  		right: 12%;
+  		bottom: 12%;
   	}
   	img{
   		height: 100%;width: 100%;
@@ -121,14 +107,16 @@
     <div class="swiper-container">
         <div class="swiper-wrapper">
             <div class="swiper-slide" id="page-0">
-            	<div class="first-main-img-div">
+            	<div class="first-main-img-div first-main-img-div-animation">
             		<img alt="" src="/images/fist-page-img.jpg">
             	</div>
             	<div class="first-main-img-cover-div">
             		<img src="/images/first-page-back.png"/>
             	</div>
             	<div class="left-o" >
-            	<img src="/images/face-left-side.png" style="width: 100%;height: 100%;"/></div>
+            	<img src="/images/face-left-side.png"/></div>
+            	<div class="first-main-heart-div animation">
+            		<img src="/images/heart.png"/></div>
             </div>
             <div class="swiper-slide" id="page-1"><div class="left-o" >
             	<img src="/images/face-left-side.png" style="width: 100%;height: 100%;"/></div>2</div>
@@ -156,21 +144,24 @@
     <!-- Swiper JS -->
     <script src="/libs/jquery/jquery-1.11.2.min.js"></script>
     <script src="/libs/swaper/js/swiper.min.js"></script>
-
+	<script src="/libs/swaper/js/swiper.jquery.min.js"></script>
     <!-- Initialize Swiper -->
     <script>
-    var swiper = new Swiper('.swiper-container', {
-        direction: 'vertical',
-        slidesPerView: 1,
-        spaceBetween: 30,
-        mousewheelControl: true,
-        loop:true,
-        autoplay: 20000,
-        onSlideNextEnd: function(swiper){
-        	var index=swiper.activeIndex;
-        	//$('#page-'+index).append($('#face-left'));
-        }
+    $(function(){
+    	var swiper = new Swiper('.swiper-container', {
+            direction: 'vertical',
+            slidesPerView: 1,
+            spaceBetween: 30,
+            mousewheelControl: true,
+            loop:true,
+            autoplay: 20000,
+            onSlideNextEnd: function(swiper){
+            	var index=swiper.activeIndex;
+            	//$('#page-'+index).append($('#face-left'));
+            }
+        });
     });
+    
     </script>
 </body>
 </html>
