@@ -157,7 +157,7 @@
 		    transform: none;
 		}
 	 }
-	 @keyframes page-1--heart-route{
+	 @keyframes page-1-heart-route{
 	 	0%{
 	 		opacity: 0.9;
 		    filter: alpha(opacity=90);
@@ -199,7 +199,7 @@
 		    height: 2.4rem;
 	 	}
 	 }
-	 @-webkit-keyframes page-1--heart-route{
+	 @-webkit-keyframes page-1-heart-route{
 	 	0%{
 	 		opacity: 0.9;
 		    filter: alpha(opacity=90);
